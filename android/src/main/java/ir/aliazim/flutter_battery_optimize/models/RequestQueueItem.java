@@ -1,4 +1,4 @@
-package in.jvapps.disable_battery_optimization.models;
+package ir.aliazim.flutter_battery_optimize.models;
 
 import com.thelittlefireman.appkillermanager.managers.KillerManager;
 

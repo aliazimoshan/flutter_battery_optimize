@@ -1,10 +1,10 @@
-package in.jvapps.disable_battery_optimization_example;
+package ir.aliazim.flutter_battery_optimize_example;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
-import in.jvapps.disable_battery_optimization.DisableBatteryOptimizationPlugin;
+import ir.aliazim.flutter_battery_optimize.FlutterBatteryOptimizePlugin;
 //import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugins.GeneratedPluginRegistrant;

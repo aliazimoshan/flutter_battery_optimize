@@ -1,5 +1,5 @@
-name: disable_battery_optimization_example
-description: Demonstrates how to use the disable_battery_optimization plugin.
+name: flutter_battery_optimize_example
+description: Demonstrates how to use the flutter_battery_optimize plugin.
 publish_to: 'none'
 
 environment:
@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  disable_battery_optimization:
+  flutter_battery_optimize:
     path: ../
   fluttertoast: ^7.0.4
 

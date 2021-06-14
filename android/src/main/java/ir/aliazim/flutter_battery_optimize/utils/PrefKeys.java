@@ -1,4 +1,4 @@
-package in.jvapps.disable_battery_optimization.utils;
+package ir.aliazim.flutter_battery_optimize.utils;
 
 public class PrefKeys {
     public static final String IS_MAN_BATTERY_OPTIMIZATION_ACCEPTED = "IS_MAN_BATTERY_OPTIMIZATION_ACCEPTED";

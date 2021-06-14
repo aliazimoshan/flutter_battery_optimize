@@ -1,11 +1,11 @@
-#import "DisableBatteryOptimizationPlugin.h"
+#import "FlutterBatteryOptimizePlugin.h"
 
-@implementation DisableBatteryOptimizationPlugin
+@implementation FlutterBatteryOptimizePlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"disable_battery_optimization"
+      methodChannelWithName:@"flutter_battery_optimize"
             binaryMessenger:[registrar messenger]];
-  DisableBatteryOptimizationPlugin* instance = [[DisableBatteryOptimizationPlugin alloc] init];
+  FlutterBatteryOptimizePlugin* instance = [[FlutterBatteryOptimizePlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
 

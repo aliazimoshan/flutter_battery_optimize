@@ -1,4 +1,4 @@
-group 'in.jvapps.disable_battery_optimization'
+group 'ir.aliazim.flutter_battery_optimize'
 version '1.0'
 
 buildscript {
@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 29
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 16
         targetSdkVersion 29
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -1,4 +1,4 @@
-package in.jvapps.disable_battery_optimization.utils;
+package ir.aliazim.flutter_battery_optimize.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

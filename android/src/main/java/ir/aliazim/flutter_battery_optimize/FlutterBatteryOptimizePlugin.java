@@ -1,4 +1,4 @@
-package in.jvapps.disable_battery_optimization;
+package ir.aliazim.flutter_battery_optimize;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,9 +13,9 @@ import com.thelittlefireman.appkillermanager.managers.KillerManager;
 
 import java.util.List;
 
-import in.jvapps.disable_battery_optimization.utils.BatteryOptimizationUtil;
-import in.jvapps.disable_battery_optimization.utils.PrefKeys;
-import in.jvapps.disable_battery_optimization.utils.PrefUtils;
+import ir.aliazim.flutter_battery_optimize.utils.BatteryOptimizationUtil;
+import ir.aliazim.flutter_battery_optimize.utils.PrefKeys;
+import ir.aliazim.flutter_battery_optimize.utils.PrefUtils;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
@@ -26,9 +26,9 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
 
 /**
- * DisableBatteryOptimizationPlugin
+ * FlutterBatteryOptimizePlugin
  */
-public class DisableBatteryOptimizationPlugin implements FlutterPlugin, ActivityAware, MethodCallHandler {
+public class FlutterBatteryOptimizePlugin implements FlutterPlugin, ActivityAware, MethodCallHandler {
 
     private Context mContext;
     private Activity mActivity;
@@ -36,9 +36,9 @@ public class DisableBatteryOptimizationPlugin implements FlutterPlugin, Activity
     // These are null when not using v2 embedding.
     private MethodChannel channel;
 
-    private static final int REQUEST_DISABLE_BATTERY_OPTIMIZATIONS = 2244;
+    private static final int REQUEST_flutter_battery_optimizeS = 2244;
     private final String TAG = "DisableOptimization";
-    private static final String CHANNEL_NAME = "in.jvapps.disable_battery_optimization";
+    private static final String CHANNEL_NAME = "ir.aliazim.flutter_battery_optimize";
 
     private String autoStartTitle;
     private String autoStartMessage;
@@ -57,10 +57,10 @@ public class DisableBatteryOptimizationPlugin implements FlutterPlugin, Activity
     // in the same class.
     public static void registerWith(PluginRegistry.Registrar registrar) {
         final MethodChannel channel = new MethodChannel(registrar.messenger(), CHANNEL_NAME);
-        channel.setMethodCallHandler(new DisableBatteryOptimizationPlugin(registrar.activity(), registrar.activeContext()));
+        channel.setMethodCallHandler(new FlutterBatteryOptimizePlugin(registrar.activity(), registrar.activeContext()));
     }
 
-    private DisableBatteryOptimizationPlugin(Activity activity, Context context) {
+    private FlutterBatteryOptimizePlugin(Activity activity, Context context) {
         if (activity != null)
             mActivity = activity;
         if (context != null)
@@ -68,11 +68,11 @@ public class DisableBatteryOptimizationPlugin implements FlutterPlugin, Activity
     }
 
     /**
-     * Default constructor for DisableBatteryOptimizationPlugin.
+     * Default constructor for FlutterBatteryOptimizePlugin.
      *
      * <p>Use this constructor when adding this plugin to an app with v2 embedding.
      */
-    public DisableBatteryOptimizationPlugin() {
+    public FlutterBatteryOptimizePlugin() {
     }
 
     @Override
@@ -112,12 +112,12 @@ public class DisableBatteryOptimizationPlugin implements FlutterPlugin, Activity
                     result.success(false);
                 }
                 break;
-            case "showDisableBatteryOptimization":
+            case "showFlutterBatteryOptimize":
                 try {
                     showIgnoreBatteryPermissions();
                     result.success(true);
                 } catch (Exception ex) {
-                    Log.e(TAG, "Exception in showDisableBatteryOptimization. " + ex.toString());
+                    Log.e(TAG, "Exception in showFlutterBatteryOptimize. " + ex.toString());
                     result.success(false);
                 }
                 break;
@@ -192,7 +192,7 @@ public class DisableBatteryOptimizationPlugin implements FlutterPlugin, Activity
     private void showAutoStartEnabler(@Nullable final BatteryOptimizationUtil.OnBatteryOptimizationAccepted positiveCallback,
                                       @Nullable final BatteryOptimizationUtil.OnBatteryOptimizationCanceled negativeCallback) {
         BatteryOptimizationUtil.showBatteryOptimizationDialog(
-                mContext,
+                mActivity,
                 KillerManager.Actions.ACTION_AUTOSTART,
                 autoStartTitle,
                 autoStartMessage,
@@ -203,7 +203,7 @@ public class DisableBatteryOptimizationPlugin implements FlutterPlugin, Activity
 
     private void showManBatteryOptimizationDisabler(boolean isRequestNativeBatteryOptimizationDisabler) {
         BatteryOptimizationUtil.showBatteryOptimizationDialog(
-                mContext,
+                mActivity,
                 KillerManager.Actions.ACTION_POWERSAVING,
                 manBatteryTitle,
                 manBatteryMessage,

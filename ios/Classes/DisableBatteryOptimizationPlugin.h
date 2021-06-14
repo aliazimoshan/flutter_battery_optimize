@@ -1,4 +1,4 @@
 #import <Flutter/Flutter.h>
 
-@interface DisableBatteryOptimizationPlugin : NSObject<FlutterPlugin>
+@interface FlutterBatteryOptimizePlugin : NSObject<FlutterPlugin>
 @end

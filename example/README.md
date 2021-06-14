@@ -1,6 +1,6 @@
-# disable_battery_optimization_example
+# flutter_battery_optimize_example
 
-Demonstrates how to use the disable_battery_optimization plugin.
+Demonstrates how to use the flutter_battery_optimize plugin.
 
 ## Getting Started
 

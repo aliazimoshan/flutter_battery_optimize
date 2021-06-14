@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:disable_battery_optimization/disable_battery_optimization.dart';
+import 'package:flutter_battery_optimize/flutter_battery_optimize.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
@@ -29,47 +29,66 @@ class _MyAppState extends State<MyApp> {
               MaterialButton(
                   child: Text("Is Auto Start Enabled"),
                   onPressed: () async {
-                    bool isAutoStartEnabled = await DisableBatteryOptimization.isAutoStartEnabled;
-                    Fluttertoast.showToast(msg: "Auto start is ${isAutoStartEnabled ? "Enabled" : "Disabled"}");
+                    bool isAutoStartEnabled =
+                        await FlutterBatteryOptimize.isAutoStartEnabled;
+                    Fluttertoast.showToast(
+                        msg:
+                            "Auto start is ${isAutoStartEnabled ? "Enabled" : "Disabled"}");
                   }),
               MaterialButton(
                   child: Text("Is Battery optimization disabled"),
                   onPressed: () async {
-                    bool isBatteryOptimizationDisabled = await DisableBatteryOptimization.isBatteryOptimizationDisabled;
-                    Fluttertoast.showToast(msg: "Battery optimization is ${!isBatteryOptimizationDisabled ? "Enabled" : "Disabled"}");
+                    bool isBatteryOptimizationDisabled =
+                        await FlutterBatteryOptimize
+                            .isBatteryOptimizationDisabled;
+                    Fluttertoast.showToast(
+                        msg:
+                            "Battery optimization is ${!isBatteryOptimizationDisabled ? "Enabled" : "Disabled"}");
                   }),
               MaterialButton(
                   child: Text("Is Manufacturer Battery optimization disabled"),
                   onPressed: () async {
-                    bool isManBatteryOptimizationDisabled = await DisableBatteryOptimization.isManufacturerBatteryOptimizationDisabled;
-                    Fluttertoast.showToast(msg: "Manufacturer Battery optimization is ${!isManBatteryOptimizationDisabled ? "Enabled" : "Disabled"}");
+                    bool isManBatteryOptimizationDisabled =
+                        await FlutterBatteryOptimize
+                            .isManufacturerBatteryOptimizationDisabled;
+                    Fluttertoast.showToast(
+                        msg:
+                            "Manufacturer Battery optimization is ${!isManBatteryOptimizationDisabled ? "Enabled" : "Disabled"}");
                   }),
               MaterialButton(
                   child: Text("Are All Battery optimizations disabled"),
                   onPressed: () async {
-                    bool isAllBatteryOptimizationDisabled = await DisableBatteryOptimization.isAllBatteryOptimizationDisabled;
-                    Fluttertoast.showToast(msg: "All Battery optimizations are disabled ${isAllBatteryOptimizationDisabled ? "True" : "False"}");
+                    bool isAllBatteryOptimizationDisabled =
+                        await FlutterBatteryOptimize
+                            .isAllBatteryOptimizationDisabled;
+                    Fluttertoast.showToast(
+                        msg:
+                            "All Battery optimizations are disabled ${isAllBatteryOptimizationDisabled ? "True" : "False"}");
                   }),
               MaterialButton(
                   child: Text("Enable Auto Start"),
                   onPressed: () {
-                    DisableBatteryOptimization.showEnableAutoStartSettings("Enable Auto Start", "Follow the steps and enable the auto start of this app");
+                    FlutterBatteryOptimize.showEnableAutoStartSettings(
+                        "Enable Auto Start",
+                        "Follow the steps and enable the auto start of this app");
                   }),
               MaterialButton(
                   child: Text("Disable Battery Optimizations"),
                   onPressed: () {
-                    DisableBatteryOptimization.showDisableBatteryOptimizationSettings();
+                    FlutterBatteryOptimize.showFlutterBatteryOptimizeSettings();
                   }),
               MaterialButton(
                   child: Text("Disable Manufacturer Battery Optimizations"),
                   onPressed: () {
-                    DisableBatteryOptimization.showDisableManufacturerBatteryOptimizationSettings("Your device has additional battery optimization",
-                        "Follow the steps and disable the optimizations to allow smooth functioning of this app");
+                    FlutterBatteryOptimize
+                        .showDisableManufacturerBatteryOptimizationSettings(
+                            "Your device has additional battery optimization",
+                            "Follow the steps and disable the optimizations to allow smooth functioning of this app");
                   }),
               MaterialButton(
                   child: Text("Disable all Optimizations"),
                   onPressed: () {
-                    DisableBatteryOptimization.showDisableAllOptimizationsSettings(
+                    FlutterBatteryOptimize.showDisableAllOptimizationsSettings(
                         "Enable Auto Start",
                         "Follow the steps and enable the auto start of this app",
                         "Your device has additional battery optimization",

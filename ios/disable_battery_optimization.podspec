@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint disable_battery_optimization.podspec' to validate before publishing.
+# Run `pod lib lint flutter_battery_optimize.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'disable_battery_optimization'
+  s.name             = 'flutter_battery_optimize'
   s.version          = '0.0.1'
   s.summary          = 'Flutter plugin to check and disable battery optimizations. Also shows custom steps to disable the optimizations in devices like mi, xiaomi, samsung, oppo, huawei, oneplus etc '
   s.description      = <<-DESC

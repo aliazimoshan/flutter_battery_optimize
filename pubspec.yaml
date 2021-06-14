@@ -1,7 +1,7 @@
-name: disable_battery_optimization
+name: flutter_battery_optimize
 description: Flutter plugin to check and disable battery optimizations. Also shows custom steps to disable the optimizations in devices like mi, xiaomi, samsung, oppo, huawei, oneplus etc 
-version: 0.1.0
-homepage: https://github.com/pvsvamsi/Disable-Battery-Optimizations
+version: 0.0.1
+homepage: https://github.com/aliazimoshan/flutter_battery_optimize
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -27,8 +27,8 @@ flutter:
   plugin:
     platforms:
       android:
-        package: in.jvapps.disable_battery_optimization
-        pluginClass: DisableBatteryOptimizationPlugin
+        package: ir.aliazim.flutter_battery_optimize
+        pluginClass: FlutterBatteryOptimizePlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
